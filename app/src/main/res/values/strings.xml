@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Pokemon Battle</string>
+    <string name="pokemon_battle">Pokemon Battle</string>
+    <string name="playButton">Play</string>
 </resources>
