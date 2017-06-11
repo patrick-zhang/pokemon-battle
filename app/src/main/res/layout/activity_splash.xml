@@ -25,7 +25,12 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="casual"
         android:onClick="onClick"
+        android:padding="10dp"
+        android:layout_marginTop="15dp"
         android:text="@string/playButton"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:theme="@style/PlayButton" />
 </LinearLayout>
