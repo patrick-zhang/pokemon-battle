@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -28,6 +29,8 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View pokemonView = inflater.inflate(R.layout.item_pokemon, parent, false);
+            TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
+            pokemonRowName.setText("Test");
             return pokemonView;
         } else {
             return convertView;
