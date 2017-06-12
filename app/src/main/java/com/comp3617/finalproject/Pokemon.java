@@ -8,7 +8,15 @@ import java.util.List;
 
 public class Pokemon {
 
-    private int name;
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     private int photo;
 

@@ -17,10 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.pokemonList);
-        List<Pokemon> pokemonList = new ArrayList<Pokemon>();
-        pokemonList.add(new Pokemon());
-        pokemonList.add(new Pokemon());
-        pokemonList.add(new Pokemon());
+        List<Pokemon> pokemonList = PokemonFactory.create();
         PokemonListAdapter adapter = new PokemonListAdapter(this, pokemonList);
         listView.setAdapter(adapter);
     }

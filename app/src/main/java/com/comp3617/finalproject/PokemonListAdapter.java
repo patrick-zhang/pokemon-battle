@@ -30,7 +30,7 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View pokemonView = inflater.inflate(R.layout.item_pokemon, parent, false);
             TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
-            pokemonRowName.setText("Test");
+            pokemonRowName.setText(pokemonList.get(position).getName());
             return pokemonView;
         } else {
             return convertView;
