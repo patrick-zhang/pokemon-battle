@@ -1,13 +1,14 @@
 package com.comp3617.finalproject;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.comp3617.finalproject.model.Pokemon;
 
 import java.util.List;
 

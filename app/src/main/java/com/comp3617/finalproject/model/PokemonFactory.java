@@ -1,4 +1,6 @@
-package com.comp3617.finalproject;
+package com.comp3617.finalproject.model;
+
+import com.comp3617.finalproject.model.Pokemon;
 
 import java.util.ArrayList;
 
