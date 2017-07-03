@@ -1,6 +1,8 @@
 package com.comp3617.finalproject.model;
 
 
+import java.util.UUID;
+
 import io.realm.RealmList;
 import io.realm.RealmObject;
 
@@ -13,7 +15,7 @@ public class Pokemon extends RealmObject {
     private RealmList<PokemonSkill> skills;
 
     public Pokemon() {
-
+        id = UUID.randomUUID().toString();
     }
 
     public String getId() {
