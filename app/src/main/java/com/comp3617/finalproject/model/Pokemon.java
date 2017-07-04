@@ -10,7 +10,7 @@ public class Pokemon extends RealmObject {
 
     private String id;
     private String name;
-    private int imageName;
+    private String imageName;
     private int hp;
     private RealmList<PokemonSkill> skills;
 
@@ -34,11 +34,11 @@ public class Pokemon extends RealmObject {
         this.name = name;
     }
 
-    public int getImageName() {
+    public String getImageName() {
         return imageName;
     }
 
-    public void setImageName(int imageName) {
+    public void setImageName(String imageName) {
         this.imageName = imageName;
     }
 

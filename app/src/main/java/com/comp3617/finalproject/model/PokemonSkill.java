@@ -8,9 +8,9 @@ import io.realm.RealmObject;
 
 public class PokemonSkill extends RealmObject {
     private String id;
-    private int name;
+    private String name;
     private int damage;
-    private int imageName;
+    private String imageName;
 
     public PokemonSkill() {
 
@@ -24,11 +24,11 @@ public class PokemonSkill extends RealmObject {
         this.id = id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -40,11 +40,11 @@ public class PokemonSkill extends RealmObject {
         this.damage = damage;
     }
 
-    public int getImageName() {
+    public String getImageName() {
         return imageName;
     }
 
-    public void setImageName(int imageName) {
+    public void setImageName(String imageName) {
         this.imageName = imageName;
     }
 }
