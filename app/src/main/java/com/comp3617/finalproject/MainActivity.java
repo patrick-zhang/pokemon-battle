@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.PokemonFactory;
+import com.comp3617.finalproject.model.RealmManager;
 
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.pokemonList);
-        List<Pokemon> pokemonList = PokemonFactory.create();
+        List<Pokemon> pokemonList = RealmManager.getPokemonList();
         PokemonListAdapter adapter = new PokemonListAdapter(this, pokemonList);
         listView.setAdapter(adapter);
 
