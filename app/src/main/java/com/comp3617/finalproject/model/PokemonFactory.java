@@ -37,6 +37,14 @@ public class PokemonFactory {
         pokemonList.add(build("Giant Bomb", "giant_bomb_image"));
         pokemonList.add(build("Fennekin", "fennekin_image"));
         pokemonList.add(build("Quilava", "quilava_image"));
+        pokemonList.add(build("Salamence", "salamence_image"));
+        pokemonList.add(build("Hydreigon", "hydreigon_image"));
+        pokemonList.add(build("Gliscor", "gliscor_image"));
         return pokemonList;
     }
+
+    public static Pokemon getEnemy(){
+        return build("Croagunk", "croagunk_image");
+    }
+
 }
