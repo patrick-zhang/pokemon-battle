@@ -59,6 +59,11 @@ public class RealmManager {
         return pokemonList;
     }
 
+    public static void addPokemon(ArrayList<Pokemon> pokemons) {
+        for (Pokemon pokemon : pokemons) {
+            addPokemon(pokemon);
+        }
+    }
     private static void execute(Runnable operations) {
         realm.beginTransaction();
         operations.run();

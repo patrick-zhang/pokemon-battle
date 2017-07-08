@@ -56,7 +56,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imagePokemonInDetail"
         android:layout_width="220dp"
         android:layout_height="320dp"
         android:layout_gravity="center_horizontal"

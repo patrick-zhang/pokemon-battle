@@ -18,8 +18,25 @@ public class PokemonFactory {
         return pokemon;
     }
 
+    public static Pokemon build(String name, String imageName) {
+        Pokemon pokemon = new Pokemon();
+        pokemon.setName(name);
+        pokemon.setHp(getHp());
+        pokemon.setImageName(imageName);
+        return pokemon;
+    }
+
     private static int getHp() {
         int range = new Random().nextInt(Config.BASE_HP_RANGE);
         return Config.BASE_HP + range;
+    }
+
+    public static ArrayList<Pokemon> getInitialPokemonList(){
+        ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
+        pokemonList.add(build("Pichachu", "pichachu_image"));
+        pokemonList.add(build("Giant Bomb", "giant_bomb_image"));
+        pokemonList.add(build("Fennekin", "fennekin_image"));
+        pokemonList.add(build("Fennekin", "fennekin_image"));
+        return pokemonList;
     }
 }

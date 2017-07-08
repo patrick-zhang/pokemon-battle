@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comp3617.finalproject.model.Pokemon;
@@ -29,6 +30,12 @@ public class PokemonDetailActivity extends AppCompatActivity {
         nameField.setText(pokemon.getName());
         TextView hpField = (TextView) findViewById(R.id.hpTextInDetail);
         hpField.setText(String.valueOf(pokemon.getHp()));
+        String imageName = pokemon.getImageName();
+        if(imageName != null && !imageName.isEmpty()) {
+            ImageView imageView = (ImageView) findViewById(R.id.imagePokemonInDetail);
+            int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
+            imageView.setImageResource(resID);
+        }
     }
 
     public void onClick(View view) {

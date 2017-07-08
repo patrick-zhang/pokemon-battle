@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         listView = (ListView) findViewById(R.id.pokemonList);
         final List<Pokemon> pokemonList = RealmManager.getPokemonList();
         PokemonListAdapter adapter = new PokemonListAdapter(this, pokemonList);
@@ -59,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.settings: {
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
-                finish();
                 break;
             }
             default : {
