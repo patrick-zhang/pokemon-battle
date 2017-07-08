@@ -12,10 +12,8 @@ import java.util.Random;
 
 public class PokemonFactory {
     public static Pokemon build(String name) {
-        Pokemon pokemon = new Pokemon();
-        pokemon.setName(name);
-        pokemon.setHp(getHp());
-        return pokemon;
+        String imageName = "shadow_image";
+        return build(name, imageName);
     }
 
     public static Pokemon build(String name, String imageName) {
