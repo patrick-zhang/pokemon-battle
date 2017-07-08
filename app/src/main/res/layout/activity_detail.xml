@@ -16,16 +16,17 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
             android:text="Name"
             android:textColor="@android:color/black"
+            android:layout_weight="0.72"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/nameTextInDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.7"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -39,7 +40,7 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.3"
+            android:layout_weight="1"
             android:text="HP"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -48,7 +49,8 @@
             android:id="@+id/hpTextInDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.7"
+            android:layout_weight="1"
+            android:text="80"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
     </LinearLayout>

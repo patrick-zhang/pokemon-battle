@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.pokemonList);
-        List<Pokemon> pokemonList = RealmManager.getPokemonList();
+        final List<Pokemon> pokemonList = RealmManager.getPokemonList();
         PokemonListAdapter adapter = new PokemonListAdapter(this, pokemonList);
         listView.setAdapter(adapter);
 
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Intent intent = new Intent(MainActivity.this, PokemonDetailActivity.class);
+                intent.putExtra("POKEMON_ID", pokemonList.get(position).getId());
                 startActivity(intent);
                 finish();
             }
