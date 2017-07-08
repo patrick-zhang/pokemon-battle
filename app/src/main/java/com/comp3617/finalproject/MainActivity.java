@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 Intent intent = new Intent(MainActivity.this, PokemonDetailActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.addItem: {
                 Intent intent = new Intent(this, AddPokemonActivity.class);
                 startActivity(intent);
+                finish();
             }
             default : {
               break;

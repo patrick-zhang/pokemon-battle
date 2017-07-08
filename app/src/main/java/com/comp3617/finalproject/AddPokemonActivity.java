@@ -26,6 +26,7 @@ public class AddPokemonActivity extends AppCompatActivity {
                 RealmManager.addPokemon(pokemon);
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
+                finish();
                 break;
             }
             default: break;
