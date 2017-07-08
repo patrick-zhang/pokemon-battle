@@ -22,7 +22,7 @@ public class RealmManager {
         });
     }
 
-    public static void deleteTask(final String pokemonId) {
+    public static void deletePokemon(final String pokemonId) {
         execute(new Runnable() {
             @Override
             public void run() {
@@ -31,6 +31,16 @@ public class RealmManager {
             }
         });
     }
+
+    public static void deletePokemon() {
+        execute(new Runnable() {
+            @Override
+            public void run() {
+                realm.where(Pokemon.class).findAll().clear();
+            }
+        });
+    }
+
 
     public static Pokemon getPokemon(String pokemonId) {
         return realm.where(Pokemon.class)

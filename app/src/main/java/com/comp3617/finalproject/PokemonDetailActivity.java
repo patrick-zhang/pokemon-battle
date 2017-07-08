@@ -27,6 +27,8 @@ public class PokemonDetailActivity extends AppCompatActivity {
         super.onResume();
         TextView nameField = (TextView) findViewById(R.id.nameTextInDetail);
         nameField.setText(pokemon.getName());
+        TextView hpField = (TextView) findViewById(R.id.hpTextInDetail);
+        hpField.setText(String.valueOf(pokemon.getHp()));
     }
 
     public void onClick(View view) {

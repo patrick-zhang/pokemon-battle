@@ -54,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, AddPokemonActivity.class);
                 startActivity(intent);
                 finish();
+                break;
+            }
+            case R.id.settings: {
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                finish();
+                break;
             }
             default : {
               break;

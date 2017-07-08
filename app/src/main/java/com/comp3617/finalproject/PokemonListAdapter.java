@@ -27,14 +27,15 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        View pokemonView;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View pokemonView = inflater.inflate(R.layout.item_pokemon, parent, false);
-            TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
-            pokemonRowName.setText(pokemonList.get(position).getName());
-            return pokemonView;
+            pokemonView = inflater.inflate(R.layout.item_pokemon, parent, false);
         } else {
-            return convertView;
+            pokemonView = convertView;
         }
+        TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
+        pokemonRowName.setText(pokemonList.get(position).getName());
+        return pokemonView;
     }
 }

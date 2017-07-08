@@ -14,19 +14,19 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Name"
             android:textColor="@android:color/black"
-            android:layout_weight="0.72"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/nameTextInDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
             android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -38,9 +38,8 @@
 
         <TextView
             android:id="@+id/textView1"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="HP"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
@@ -51,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="80"
+            android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
     </LinearLayout>
