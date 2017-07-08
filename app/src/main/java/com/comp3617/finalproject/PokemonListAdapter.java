@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comp3617.finalproject.model.Pokemon;
@@ -34,8 +35,15 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
         } else {
             pokemonView = convertView;
         }
+        Pokemon pokemon = pokemonList.get(position);
         TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
         pokemonRowName.setText(pokemonList.get(position).getName());
+        String imageName = pokemon.getImageName();
+        if(imageName != null && !imageName.isEmpty()) {
+            ImageView icon = (ImageView) pokemonView.findViewById(R.id.pokemonRowIcon);
+            int resID = pokemonView.getResources().getIdentifier(imageName , "drawable", getContext().getPackageName());
+            icon.setImageResource(resID);
+        }
         return pokemonView;
     }
 }

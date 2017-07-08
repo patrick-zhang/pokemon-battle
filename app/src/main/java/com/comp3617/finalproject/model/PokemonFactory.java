@@ -36,7 +36,7 @@ public class PokemonFactory {
         pokemonList.add(build("Pichachu", "pichachu_image"));
         pokemonList.add(build("Giant Bomb", "giant_bomb_image"));
         pokemonList.add(build("Fennekin", "fennekin_image"));
-        pokemonList.add(build("Fennekin", "fennekin_image"));
+        pokemonList.add(build("Quilava", "quilava_image"));
         return pokemonList;
     }
 }
