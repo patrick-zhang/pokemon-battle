@@ -4,14 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.RealmManager;
-
-import java.util.ArrayList;
 
 public class PokemonDetailActivity extends AppCompatActivity {
     private Pokemon pokemon;

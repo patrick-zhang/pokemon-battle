@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.PokemonFactory;
 import com.comp3617.finalproject.model.RealmManager;
 import com.comp3617.finalproject.utils.PrefUtil;

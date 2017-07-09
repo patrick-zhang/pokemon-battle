@@ -8,10 +8,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import com.comp3617.finalproject.model.Pokemon;
-import com.comp3617.finalproject.model.PokemonFactory;
 import com.comp3617.finalproject.model.RealmManager;
 
 import java.util.List;
