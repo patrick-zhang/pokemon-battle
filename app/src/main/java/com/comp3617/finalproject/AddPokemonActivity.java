@@ -1,5 +1,6 @@
 package com.comp3617.finalproject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,8 +26,14 @@ public class AddPokemonActivity extends AppCompatActivity {
                 String pokemonName = nameEditText.getText().toString();
                 Pokemon pokemon = PokemonFactory.build(pokemonName);
                 RealmManager.addPokemon(pokemon);
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
+                Intent intent = new Intent();
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+                break;
+            }
+            case R.id.btnBackInAdd: {
+                Intent intent = new Intent();
+                setResult(Activity.RESULT_CANCELED, intent);
                 finish();
                 break;
             }

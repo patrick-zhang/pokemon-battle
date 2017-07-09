@@ -18,7 +18,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
-
+    private static int addRequestCode = 1;
+    private static int settingsRequestCode = 2;
+    private static int detailRequestCode = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 Intent intent = new Intent(MainActivity.this, PokemonDetailActivity.class);
                 intent.putExtra("POKEMON_ID", pokemonList.get(position).getId());
-                startActivity(intent);
-                finish();
+                startActivityForResult(intent, detailRequestCode);
             }
         });
     }
@@ -56,13 +57,12 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.addItem: {
                 Intent intent = new Intent(this, AddPokemonActivity.class);
-                startActivity(intent);
-                finish();
+                startActivityForResult(intent, addRequestCode);
                 break;
             }
             case R.id.settings: {
                 Intent intent = new Intent(this, SettingsActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, settingsRequestCode);
                 break;
             }
             default : {

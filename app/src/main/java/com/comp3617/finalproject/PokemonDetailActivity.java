@@ -1,5 +1,6 @@
 package com.comp3617.finalproject;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,8 +38,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
 
     public void onClick(View view) {
         if (view.getId() == R.id.btnReturnInDetail) {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            setResult(Activity.RESULT_OK, new Intent());
             finish();
         }
     }

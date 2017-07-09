@@ -1,5 +1,7 @@
 package com.comp3617.finalproject;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,5 +28,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (view.getId() == R.id.btnImportPokemon) {
             RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
         }
+        setResult(Activity.RESULT_CANCELED, new Intent());
+        finish();
     }
 }

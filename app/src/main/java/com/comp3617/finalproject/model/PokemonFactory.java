@@ -13,14 +13,17 @@ import java.util.Random;
 public class PokemonFactory {
     public static Pokemon build(String name) {
         String imageName = "shadow_image";
-        return build(name, imageName);
+        return build(name, imageName, null);
     }
 
-    public static Pokemon build(String name, String imageName) {
+    public static Pokemon build(String name, String imageName, String id) {
         Pokemon pokemon = new Pokemon();
         pokemon.setName(name);
         pokemon.setHp(getHp());
         pokemon.setImageName(imageName);
+        if (id != null) {
+            pokemon.setId(id);
+        }
         return pokemon;
     }
 
@@ -31,18 +34,18 @@ public class PokemonFactory {
 
     public static ArrayList<Pokemon> getInitialPokemonList(){
         ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
-        pokemonList.add(build("Pichachu", "pichachu_image"));
-        pokemonList.add(build("Giant Bomb", "giant_bomb_image"));
-        pokemonList.add(build("Fennekin", "fennekin_image"));
-        pokemonList.add(build("Quilava", "quilava_image"));
-        pokemonList.add(build("Salamence", "salamence_image"));
-        pokemonList.add(build("Hydreigon", "hydreigon_image"));
-        pokemonList.add(build("Gliscor", "gliscor_image"));
+        pokemonList.add(build("Pichachu", "pichachu_image", "001"));
+        pokemonList.add(build("Giant Bomb", "giant_bomb_image", "002"));
+        pokemonList.add(build("Fennekin", "fennekin_image", "003"));
+        pokemonList.add(build("Quilava", "quilava_image", "004"));
+        pokemonList.add(build("Salamence", "salamence_image", "005"));
+        pokemonList.add(build("Hydreigon", "hydreigon_image", "006"));
+        pokemonList.add(build("Gliscor", "gliscor_image", "007"));
         return pokemonList;
     }
 
     public static Pokemon getEnemy(){
-        return build("Croagunk", "croagunk_image");
+        return build("Croagunk", "croagunk_image", "000");
     }
 
 }
