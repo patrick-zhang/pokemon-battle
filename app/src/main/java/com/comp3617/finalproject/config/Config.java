@@ -7,4 +7,6 @@ package com.comp3617.finalproject.config;
 public class Config {
     public static final int BASE_HP = 90;
     public static final int BASE_HP_RANGE = 30;
+    public static final int BASE_DAMAGE = 30;
+    public static final int BASE_DAMAGE_RANGE = 15;
 }

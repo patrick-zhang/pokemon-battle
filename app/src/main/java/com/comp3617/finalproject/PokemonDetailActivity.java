@@ -34,6 +34,10 @@ public class PokemonDetailActivity extends AppCompatActivity {
             int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
             imageView.setImageResource(resID);
         }
+        TextView skillNameField = (TextView) findViewById(R.id.textSkillNameInDetail);
+        skillNameField.setText(pokemon.getSkills().first().getName());
+        TextView damageField = (TextView) findViewById(R.id.textDamageInDetail);
+        damageField.setText(String.valueOf(pokemon.getSkills().first().getDamage()));
     }
 
     public void onClick(View view) {

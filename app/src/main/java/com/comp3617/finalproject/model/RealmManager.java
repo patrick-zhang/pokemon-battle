@@ -7,6 +7,7 @@ package com.comp3617.finalproject.model;
 import java.util.ArrayList;
 
 import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmResults;
 
 public class RealmManager {
@@ -49,7 +50,6 @@ public class RealmManager {
     }
 
     public static ArrayList<Pokemon> getPokemonList() {
-        Realm realm = Realm.getDefaultInstance();
         RealmResults<Pokemon> pokemons =
                 realm.where(Pokemon.class).findAll();
         ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
@@ -64,6 +64,29 @@ public class RealmManager {
             addPokemon(pokemon);
         }
     }
+    public static void addPokemonSkill(final PokemonSkill s) {
+        execute(new Runnable() {
+            @Override
+            public void run() {
+                PokemonSkill skill = realm.copyToRealm(s);
+            }
+        });
+    }
+
+    public static void addSkill(ArrayList<PokemonSkill> skills) {
+        for (PokemonSkill skill : skills) {
+            addPokemonSkill(skill);
+        }
+    }
+
+    public static RealmList<PokemonSkill> getSkillList() {
+        RealmResults<PokemonSkill> pokemonskills =
+                realm.where(PokemonSkill.class).findAll();
+        RealmList<PokemonSkill> skillsList = new RealmList<PokemonSkill>();
+        skillsList.addAll(pokemonskills.subList(0, pokemonskills.size()));
+        return skillsList;
+    }
+
     private static void execute(Runnable operations) {
         realm.beginTransaction();
         operations.run();

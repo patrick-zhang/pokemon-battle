@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.comp3617.finalproject.model.PokemonFactory;
 import com.comp3617.finalproject.model.RealmManager;
+import com.comp3617.finalproject.model.SkillFactory;
 import com.comp3617.finalproject.utils.PrefUtil;
 
 public class SplashActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         boolean initialized = prefUtil.getBoolean(PrefUtil.PREF_KEY_INITIALIZED, false);
         if (!initialized) {
             RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
+            RealmManager.addSkill(SkillFactory.getSkillList());
             prefUtil.setBoolean(PrefUtil.PREF_KEY_INITIALIZED, true);
         }
     }

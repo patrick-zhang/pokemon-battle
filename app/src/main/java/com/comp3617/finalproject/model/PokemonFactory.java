@@ -24,6 +24,7 @@ public class PokemonFactory {
         if (id != null) {
             pokemon.setId(id);
         }
+        pokemon.setSkills(RealmManager.getSkillList());
         return pokemon;
     }
 
