@@ -20,6 +20,8 @@ import java.util.List;
 public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
     private Context context;
     private List<Pokemon> pokemonList;
+    private TextView pokemonRowName;
+    private ImageView icon;
     public PokemonListAdapter(@NonNull Context context, List<Pokemon> pokemonList) {
         super(context, 0, pokemonList);
         this.context = context;
@@ -36,11 +38,11 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
             pokemonView = convertView;
         }
         Pokemon pokemon = pokemonList.get(position);
-        TextView pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
+        pokemonRowName = (TextView) pokemonView.findViewById(R.id.pokemonRowName);
         pokemonRowName.setText(pokemonList.get(position).getName());
         String imageName = pokemon.getImageName();
         if(imageName != null && !imageName.isEmpty()) {
-            ImageView icon = (ImageView) pokemonView.findViewById(R.id.pokemonRowIcon);
+            icon = (ImageView) pokemonView.findViewById(R.id.pokemonRowIcon);
             int resID = pokemonView.getResources().getIdentifier(imageName , "drawable", getContext().getPackageName());
             icon.setImageResource(resID);
         }
