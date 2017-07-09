@@ -1,7 +1,6 @@
 package com.comp3617.finalproject.model;
 
 import com.comp3617.finalproject.config.Config;
-import com.comp3617.finalproject.model.Pokemon;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,7 +23,7 @@ public class PokemonFactory {
         if (id != null) {
             pokemon.setId(id);
         }
-        pokemon.setSkills(RealmManager.getSkillList());
+        pokemon.setSkills(RealmManager.getSkillSet());
         return pokemon;
     }
 

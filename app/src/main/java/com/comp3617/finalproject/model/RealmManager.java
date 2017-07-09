@@ -5,6 +5,7 @@ package com.comp3617.finalproject.model;
  */
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -85,6 +86,26 @@ public class RealmManager {
         RealmList<PokemonSkill> skillsList = new RealmList<PokemonSkill>();
         skillsList.addAll(pokemonskills.subList(0, pokemonskills.size()));
         return skillsList;
+    }
+
+    public static RealmList<PokemonSkill> getSkillSet() {
+        RealmResults<PokemonSkill> pokemonskills =
+                realm.where(PokemonSkill.class).findAll();
+        RealmList<PokemonSkill> skillsList = new RealmList<PokemonSkill>();
+        Random rand = new Random();
+        int skillNumber = pokemonskills.size();
+        skillsList.add(pokemonskills.get(rand.nextInt(skillNumber)));
+        skillsList.add(pokemonskills.get(rand.nextInt(skillNumber)));
+        return skillsList;
+    }
+
+    public static void deletePokemonSkill() {
+        execute(new Runnable() {
+            @Override
+            public void run() {
+                realm.where(PokemonSkill.class).findAll().clear();
+            }
+        });
     }
 
     private static void execute(Runnable operations) {

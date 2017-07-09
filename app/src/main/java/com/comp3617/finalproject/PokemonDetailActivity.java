@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.comp3617.finalproject.model.Pokemon;
+import com.comp3617.finalproject.model.PokemonSkill;
 import com.comp3617.finalproject.model.RealmManager;
 
 public class PokemonDetailActivity extends AppCompatActivity {
@@ -34,10 +36,19 @@ public class PokemonDetailActivity extends AppCompatActivity {
             int resID = getResources().getIdentifier(imageName , "drawable", getPackageName());
             imageView.setImageResource(resID);
         }
+        PokemonSkill skill = pokemon.getSkills().first();
+        Log.d("+++", skill.getImageName());
         TextView skillNameField = (TextView) findViewById(R.id.textSkillNameInDetail);
-        skillNameField.setText(pokemon.getSkills().first().getName());
+        skillNameField.setText(skill.getName());
         TextView damageField = (TextView) findViewById(R.id.textDamageInDetail);
         damageField.setText(String.valueOf(pokemon.getSkills().first().getDamage()));
+
+        String iconImageName = skill.getImageName();
+        if(iconImageName != null && !iconImageName.isEmpty()) {
+            ImageView skillIcon = (ImageView) findViewById(R.id.imageSkillInDetail);
+            int resID = getResources().getIdentifier(iconImageName , "drawable", getPackageName());
+            skillIcon.setImageResource(resID);
+        }
     }
 
     public void onClick(View view) {

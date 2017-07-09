@@ -19,8 +19,8 @@ public class SplashActivity extends AppCompatActivity {
         PrefUtil prefUtil = new PrefUtil(this);
         boolean initialized = prefUtil.getBoolean(PrefUtil.PREF_KEY_INITIALIZED, false);
         if (!initialized) {
-            RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
             RealmManager.addSkill(SkillFactory.getSkillList());
+            RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
             prefUtil.setBoolean(PrefUtil.PREF_KEY_INITIALIZED, true);
         }
     }

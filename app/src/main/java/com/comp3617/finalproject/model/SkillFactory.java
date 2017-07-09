@@ -12,7 +12,11 @@ import java.util.Random;
 public class SkillFactory {
     public static ArrayList<PokemonSkill> getSkillList () {
         ArrayList<PokemonSkill> skillList = new ArrayList<PokemonSkill>();
-        skillList.add(build("Claw", "default_skill_image"));
+        skillList.add(build("Claw", "claw_image"));
+        skillList.add(build("Lighting", "lightin_image"));
+        skillList.add(build("Enegy Ball", "enegy_ball_image"));
+        skillList.add(build("Fireball", "fireball_image"));
+        skillList.add(build("Iron Tail", "iron_tail_image"));
         return skillList;
     }
 
