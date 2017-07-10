@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:layout_height="80dp">
+
+    <ImageView
+        android:id="@+id/imgIconInPokemonSkillRow"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/default_skill_image" />
+
+    <TextView
+        android:id="@+id/tvNameInPokemonSkillRow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tvDamageInPokemonSkillRow"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="18sp" />
+</LinearLayout>
