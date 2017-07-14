@@ -9,4 +9,5 @@ public class Config {
     public static final int BASE_HP_RANGE = 30;
     public static final int BASE_DAMAGE = 30;
     public static final int BASE_DAMAGE_RANGE = 15;
+    public static final int MAX_SKILL_NUMBER = 3;
 }

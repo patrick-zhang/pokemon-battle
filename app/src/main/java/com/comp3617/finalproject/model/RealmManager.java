@@ -4,8 +4,12 @@ package com.comp3617.finalproject.model;
  * Created by Patrick on 7/4/2017.
  */
 
+import com.comp3617.finalproject.config.Config;
+
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -89,13 +93,17 @@ public class RealmManager {
     }
 
     public static RealmList<PokemonSkill> getSkillSet() {
-        RealmResults<PokemonSkill> pokemonskills =
+        RealmResults<PokemonSkill> skillRealmResults =
                 realm.where(PokemonSkill.class).findAll();
-        RealmList<PokemonSkill> skillsList = new RealmList<PokemonSkill>();
+        Set<PokemonSkill> skillSet = new HashSet<PokemonSkill>();
         Random rand = new Random();
-        int skillNumber = pokemonskills.size();
-        skillsList.add(pokemonskills.get(rand.nextInt(skillNumber)));
-        skillsList.add(pokemonskills.get(rand.nextInt(skillNumber)));
+        for (int i = 0; i < Config.MAX_SKILL_NUMBER; i++) {
+            skillSet.add(skillRealmResults.get(rand.nextInt(skillRealmResults.size())));
+        }
+        RealmList<PokemonSkill> skillsList = new RealmList<PokemonSkill>();
+        for (PokemonSkill skill : skillSet) {
+            skillsList.add(skill);
+        }
         return skillsList;
     }
 
