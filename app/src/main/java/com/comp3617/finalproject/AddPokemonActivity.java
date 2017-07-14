@@ -10,6 +10,7 @@ import android.widget.EditText;
 import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.PokemonFactory;
 import com.comp3617.finalproject.model.RealmManager;
+import com.comp3617.finalproject.utils.HttpUtil;
 
 public class AddPokemonActivity extends AppCompatActivity {
 
@@ -24,6 +25,9 @@ public class AddPokemonActivity extends AppCompatActivity {
             case R.id.btnAddPokemon: {
                 EditText nameEditText = (EditText) findViewById(R.id.nameEditText);
                 String pokemonName = nameEditText.getText().toString();
+                if (pokemonName.isEmpty()) {
+                    pokemonName = HttpUtil.getPokemonName();
+                }
                 Pokemon pokemon = PokemonFactory.build(pokemonName);
                 RealmManager.addPokemon(pokemon);
                 Intent intent = new Intent();
