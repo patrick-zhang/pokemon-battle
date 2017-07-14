@@ -86,8 +86,8 @@
         android:onClick="onClick"
         android:layout_margin="15dp"
         android:padding="10dp"
-        android:text="Train"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:text="Train" />
 
     <Button
         android:id="@+id/btnReturnInDetail"
@@ -97,7 +97,7 @@
         android:onClick="onClick"
         android:layout_margin="15dp"
         android:padding="10dp"
-        android:text="Return"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:text="Return" />
 
 </LinearLayout>

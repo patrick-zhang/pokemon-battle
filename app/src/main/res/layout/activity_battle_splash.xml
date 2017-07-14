@@ -8,8 +8,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_weight="1"
         android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:color/holo_purple" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,44 +48,34 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:srcCompat="@drawable/croagunk_image" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="24sp" />
-
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                app:srcCompat="@android:color/holo_purple" />
-        </LinearLayout>
     </LinearLayout>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnTrainInBattleSplash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/holo_green_dark"
+        android:onClick="onClick"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
         android:text="Battle" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnReturnInBattleSplash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:onClick="onClick"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:textColor="@android:color/black"
         android:text="Return" />
 
 </LinearLayout>
