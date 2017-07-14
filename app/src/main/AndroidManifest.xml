@@ -31,7 +31,8 @@
             android:name=".PokemonDetailActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".SettingsActivity" />
-
+        <activity android:name=".BattleSplashActivity" />
+        <activity android:name=".BattleActivity"></activity>
     </application>
 
 </manifest>

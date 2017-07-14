@@ -18,6 +18,7 @@ import java.util.List;
 
 public class PokemonDetailActivity extends AppCompatActivity {
     private Pokemon pokemon;
+    private static int trainCode = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,10 @@ public class PokemonDetailActivity extends AppCompatActivity {
         if (view.getId() == R.id.btnReturnInDetail) {
             setResult(Activity.RESULT_OK, new Intent());
             finish();
+        }
+        if (view.getId() == R.id.btnTrainInDetail) {
+            Intent trainIntent = new Intent(this, BattleSplashActivity.class);
+            startActivityForResult(trainIntent, trainCode);
         }
     }
 }
