@@ -30,7 +30,8 @@
         <activity
             android:name=".PokemonDetailActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+
     </application>
 
 </manifest>
