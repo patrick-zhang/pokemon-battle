@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.RealmManager;
+import com.comp3617.finalproject.utils.IntentUtil;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Intent intent = new Intent(MainActivity.this, PokemonDetailActivity.class);
-                intent.putExtra("POKEMON_ID", pokemonList.get(position).getId());
+                intent.putExtra(IntentUtil.POKE_ID_INTENT, pokemonList.get(position).getId());
                 startActivityForResult(intent, detailRequestCode);
             }
         });

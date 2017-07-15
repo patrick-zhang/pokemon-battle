@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.comp3617.finalproject.model.Pokemon;
 import com.comp3617.finalproject.model.PokemonSkill;
 import com.comp3617.finalproject.model.RealmManager;
+import com.comp3617.finalproject.utils.IntentUtil;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        String pokemonId = getIntent().getStringExtra("POKEMON_ID");
+        String pokemonId = getIntent().getStringExtra(IntentUtil.POKE_ID_INTENT);
         pokemon = RealmManager.getPokemon(pokemonId);
         ListView listView = (ListView) findViewById(R.id.pokemonSkillList);
         final List<PokemonSkill> pokemonSkillList = pokemon.getSkills();
@@ -54,6 +55,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
         }
         if (view.getId() == R.id.btnTrainInDetail) {
             Intent trainIntent = new Intent(this, BattleSplashActivity.class);
+            trainIntent.putExtra(IntentUtil.POKE_ID_INTENT, pokemon.getId());
             startActivityForResult(trainIntent, trainCode);
         }
     }
