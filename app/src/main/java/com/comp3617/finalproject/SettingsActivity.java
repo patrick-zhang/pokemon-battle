@@ -27,7 +27,6 @@ public class SettingsActivity extends AppCompatActivity {
         }
         if (view.getId() == R.id.btnImportPokemon) {
             RealmManager.addSkill(SkillFactory.getSkillList());
-            RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
         }
         setResult(Activity.RESULT_CANCELED, new Intent());
         finish();

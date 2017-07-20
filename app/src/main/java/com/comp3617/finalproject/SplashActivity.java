@@ -22,7 +22,6 @@ public class SplashActivity extends AppCompatActivity {
         boolean initialized = prefUtil.getBoolean(PrefUtil.PREF_KEY_INITIALIZED, false);
         if (!initialized) {
             RealmManager.addSkill(SkillFactory.getSkillList());
-            RealmManager.addPokemon(PokemonFactory.getInitialPokemonList());
             prefUtil.setBoolean(PrefUtil.PREF_KEY_INITIALIZED, true);
         }
         mediaPlayer = MediaPlayer.create(this, R.raw.pokemon_music);

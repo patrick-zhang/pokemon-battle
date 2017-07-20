@@ -29,6 +29,7 @@ import okhttp3.Response;
 
 public class AddPokemonActivity extends AppCompatActivity {
     private static int RESULT_LOAD_IMAGE = 1;
+    private String imageFilePath = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +68,7 @@ public class AddPokemonActivity extends AppCompatActivity {
     }
 
     private void addPokemon(String pokemonName) {
-        Pokemon pokemon = PokemonFactory.build(pokemonName);
+        Pokemon pokemon = PokemonFactory.build(pokemonName, imageFilePath);
         RealmManager.addPokemon(pokemon);
         Intent intent = new Intent();
         setResult(Activity.RESULT_OK, intent);
@@ -87,11 +88,11 @@ public class AddPokemonActivity extends AppCompatActivity {
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String picturePath = cursor.getString(columnIndex);
+            imageFilePath = cursor.getString(columnIndex);
             cursor.close();
 
             ImageView imageView = (ImageView) findViewById(R.id.ivPokemonImage);
-            imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+            imageView.setImageBitmap(BitmapFactory.decodeFile(imageFilePath));
         }
     }
 

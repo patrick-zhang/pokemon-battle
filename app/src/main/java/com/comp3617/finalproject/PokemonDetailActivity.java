@@ -2,6 +2,7 @@ package com.comp3617.finalproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,8 +43,7 @@ public class PokemonDetailActivity extends AppCompatActivity {
         String imageName = pokemon.getImageName();
         if (imageName != null && !imageName.isEmpty()) {
             ImageView imageView = (ImageView) findViewById(R.id.imagePokemonInDetail);
-            int resID = getResources().getIdentifier(imageName, "drawable", getPackageName());
-            imageView.setImageResource(resID);
+            imageView.setImageBitmap(BitmapFactory.decodeFile(pokemon.getImageName()));
         }
         PokemonSkill skill = pokemon.getSkills().first();
     }

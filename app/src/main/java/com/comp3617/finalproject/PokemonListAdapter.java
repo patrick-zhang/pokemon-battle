@@ -1,6 +1,7 @@
 package com.comp3617.finalproject;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,8 +44,7 @@ public class PokemonListAdapter extends ArrayAdapter<Pokemon> {
         String imageName = pokemon.getImageName();
         if(imageName != null && !imageName.isEmpty()) {
             icon = (ImageView) pokemonView.findViewById(R.id.pokemonRowIcon);
-            int resID = pokemonView.getResources().getIdentifier(imageName , "drawable", getContext().getPackageName());
-            icon.setImageResource(resID);
+            icon.setImageBitmap(BitmapFactory.decodeFile(pokemon.getImageName()));
         }
         return pokemonView;
     }
